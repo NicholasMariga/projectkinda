@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/grad_bg"
+    tools:context=".Remarks.remarks">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="GENERAL REMARKS"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/tvsp"
+            android:textSize="20sp"
+            android:fontFamily="sans-serif-light"
+            android:textAllCaps="true" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="40dp"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/loggedas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="27dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="15dp"
+                android:textAlignment="center"
+                android:text=""
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Name : "
+                android:id="@+id/tvsp"
+                android:layout_marginBottom="5dp"
+                android:textSize="15sp"
+                android:textColor="@color/white"
+                android:layout_below="@+id/loggedas"
+                android:fontFamily="sans-serif-light"
+                android:textAllCaps="true"
+                android:layout_marginTop="25dp" />
+            <EditText
+                android:id="@+id/to_kname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:textColor="@color/white"
+                android:layout_below="@+id/loggedas"
+                android:inputType="text"
+                android:layout_toRightOf="@+id/tvsp"
+                android:layout_marginLeft="52dp"
+                android:layout_marginTop="16dp"/>
+            <TextView
+                android:id="@+id/tvsp2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Parent ID : "
+                android:textColor="@color/white"
+                android:layout_marginTop="35dp"
+                android:layout_below="@+id/tvsp"
+                android:textSize="15sp"
+                android:fontFamily="sans-serif-light"
+                android:textAllCaps="true" />
+            <EditText
+                android:id="@+id/idp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="20dp"
+                android:inputType="number"
+                android:textColor="@color/white"
+                android:layout_below="@+id/to_kname"
+                android:layout_toRightOf="@+id/tvsp2"
+                android:contextClickable="true"
+                android:layout_marginTop="16dp"/>
+            <TextView
+                android:id="@+id/tvsp4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Phone No : "
+                android:layout_marginTop="35dp"
+                android:textColor="@color/white"
+                android:layout_below="@+id/tvsp2"
+                android:textSize="15sp"
+                android:fontFamily="sans-serif-light"
+                android:textAllCaps="true" />
+            <EditText
+                android:id="@+id/number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="20dp"
+                android:inputType="number"
+                android:layout_below="@+id/tvsp2"
+                android:textColor="@color/white"
+                android:layout_toRightOf="@+id/tvsp4"
+                android:contextClickable="true"
+                android:layout_marginTop="25dp"/>
+            <TextView
+                android:id="@+id/tvsp3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Class : "
+                android:textColor="@color/white"
+                android:layout_marginTop="50dp"
+                android:layout_below="@+id/tvsp4"
+                android:textSize="15sp"
+                android:fontFamily="sans-serif-light"
+                android:textAllCaps="true" />
+            <Spinner
+                android:id="@+id/level"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="52dp"
+                android:layout_below="@+id/tvsp4"
+                android:layout_toRightOf="@+id/tvsp3"
+                android:textColor="@color/white"
+                android:contextClickable="true"
+                android:layout_marginTop="45dp"
+                android:entries="@array/level">
+
+            </Spinner>
+            <!--end of add-->
+
+            <TextView
+                android:id="@+id/tvco"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Remarks : "
+                android:layout_below="@+id/tvsp3"
+                android:layout_marginBottom="5dp"
+                android:textSize="15sp"
+                android:fontFamily="sans-serif-light"
+                android:textColor="@color/white"
+                android:textAllCaps="true"
+                android:layout_marginTop="65dp"/>
+
+            <EditText
+                android:id="@+id/etRemarks"
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:layout_below="@+id/tvco"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="40dp"
+                android:layout_weight="1"
+                android:textColor="@color/white"
+                android:ems="10"
+                android:gravity="top"
+                android:inputType="textMultiLine"
+                android:outlineAmbientShadowColor="@color/black" />
+
+        </RelativeLayout>
+        <Button
+            android:id="@+id/btnsubmit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SUBMIT"
+            android:onClick="submit"
+            android:layout_below="@+id/etRemarks"/>
+        <Button
+            android:layout_marginTop="4dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Refresh"
+            android:onClick="refresh"
+            android:layout_below="@+id/btnsubmit"
+
+            android:layout_alignParentBottom="true"/>
+
+
+    </LinearLayout>
+
+</ScrollView>

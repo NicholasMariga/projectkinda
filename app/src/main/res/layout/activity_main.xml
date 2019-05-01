@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".MainActivity">
+    <RelativeLayout
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:src="@drawable/loadingb"
+            android:id="@+id/loadi"
+            android:layout_width="85dp"
+            android:layout_height="85dp"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"/>
+        <!-- <TextView
+              android:layout_below="@+id/loadi"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="KaWeMa"
+              android:layout_marginTop="15dp"
+              android:textSize="39sp"
+              android:textColor="@color/bgapp"/>-->
+    </RelativeLayout>
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Welcome"
+        android:textSize="17dp"
+        android:layout_marginBottom="10dp"
+        android:textColor="@color/white"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_horizontal"/>
+
+</RelativeLayout>
