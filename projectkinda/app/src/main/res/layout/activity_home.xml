@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Home.home">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/main1"
+            android:layout_width="match_parent"
+            android:layout_height="300pt"
+            android:background="@drawable/iconone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="LOGO"
+                android:textSize="35sp"
+                android:textColor="@color/white"
+                android:layout_alignParentRight="true"/>
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/main2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/main1">
+
+            <Button
+                android:id="@+id/parentlog"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Login"
+                android:background="@color/colorPrimary"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:layout_marginTop="4dp"
+                android:layout_marginLeft="5dp"
+                android:layout_alignParentLeft="true"/>
+           <!-- <Button
+                android:id="@+id/teacherlog"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:text="Teacher Login"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="4dp"
+                android:background="@color/colorPrimary"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:layout_toRightOf="@+id/parentlog"
+                android:layout_alignParentRight="true"/>
+            <Button
+                android:id="@+id/directorlog"
+                android:layout_below="@+id/parentlog"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:text="Director Login"
+                android:background="@color/colorPrimary"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="5dp"
+                android:layout_alignParentLeft="true"/>
+
+            <Button
+                android:id="@+id/about"
+                android:layout_below="@+id/teacherlog"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:text="About Us"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/colorPrimary"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:layout_toRightOf="@+id/parentlog"
+                android:layout_alignParentRight="true"/>-->
+
+            <RelativeLayout
+                android:id="@+id/main3"
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/parentlog"
+                android:background="@color/gradStart">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="App Developed by SlimGuy"
+                    android:gravity="center_horizontal"
+                    android:layout_centerHorizontal="true"
+                    android:textColor="@color/white"/>
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </LinearLayout>
+</ScrollView>

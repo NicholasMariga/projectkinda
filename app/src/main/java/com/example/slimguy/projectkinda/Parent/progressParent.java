@@ -11,12 +11,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.slimguy.projectkinda.Models.BehaviorModel;
+import com.example.slimguy.projectkinda.Models.progressModel;
 import com.example.slimguy.projectkinda.R;
+import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -34,8 +36,7 @@ import java.util.ArrayList;
 
 public class progressParent extends AppCompatActivity {
     ListView listView;
-    String constant;
-    String folder;
+    String constant,folder;
     SwipeRefreshLayout swipeRefreshLayout;
     SharedPreferences sharedPreferences;
     String File="File";
@@ -43,12 +44,12 @@ public class progressParent extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_behaviour_parent);
+        setContentView(R.layout.activity_progress_parent);
         Toolbar toolbar =  findViewById(R.id.as);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Academic Progress");
+        getSupportActionBar().setTitle("Progress");
         listView = findViewById(R.id.list);
-        constant="192.168.43.107";
+        constant="192.168.137.1";
         folder = "sem2";
         listView.setDivider(null);
         swipeRefreshLayout=findViewById(R.id.swipe);
@@ -59,6 +60,7 @@ public class progressParent extends AppCompatActivity {
             }
         });
         sharedPreferences=getSharedPreferences(File, Context.MODE_PRIVATE);
+
         load();
     }
 
@@ -117,7 +119,7 @@ public class progressParent extends AppCompatActivity {
         protected class GetConnected {
             URL url;
             HttpURLConnection httpU;
-            String sign_url = "http://" + constant + "/" + folder + "/academicprogress.php";
+            String sign_url = "http://192.168.137.1/sem2/progress.php";
             public HttpURLConnection GetConnected() {
                 if (sign_url != null) {
                     try {
@@ -141,7 +143,6 @@ public class progressParent extends AppCompatActivity {
             if (s != null) {
                 ParserData parserData = new ParserData(context, listView, s);
                 parserData.execute(s);
-
             } else {
                 Toast.makeText(context, "Error Encountered\nCan't reach the Server:" , Toast.LENGTH_SHORT).show();
             }
@@ -151,7 +152,7 @@ public class progressParent extends AppCompatActivity {
             Context context;
             ListView listView;
             String jsondata;
-            ArrayList<BehaviorModel> arrayList = new ArrayList<>();
+            ArrayList<progressModel> arrayList = new ArrayList<>();
 
             public ParserData(Context context, ListView listView, String jsondata) {
                 this.context = context;
@@ -179,6 +180,7 @@ public class progressParent extends AppCompatActivity {
                 swipeRefreshLayout.setRefreshing(false);
                 if (bool) {
                     AdapterClass adapterClass = new AdapterClass(arrayList, context, listView);
+
                     listView.setAdapter(adapterClass);
                 } else {
                     Toast.makeText(context, "Encountered Error During processing", Toast.LENGTH_LONG).show();
@@ -192,19 +194,16 @@ public class progressParent extends AppCompatActivity {
                     JSONObject jsonObject = null;
 
                     int i = 0;
-                    BehaviorModel model;
+                    progressModel model;
                     while (i < jsonArray.length()) {
                         jsonObject = jsonArray.getJSONObject(i);
-                        model = new BehaviorModel();
-                        model.setKidnumber(jsonObject.getString("kidnumber"));
-                        model.setLevel(jsonObject.getString("level"));
-                        model.setKidname(jsonObject.getString("kidname"));
-                        model.setParentname(jsonObject.getString("parentname"));
-                        model.setBehavior(jsonObject.getString("behavior"));
-                        model.setBehavie(jsonObject.getString("behavie"));
-                        model.setDate(jsonObject.getString("date"));
+                        model = new progressModel();
 
-                        String username=jsonObject.getString("kidnumber");
+                        model.setId(jsonObject.getString("id"));
+                        model.setName(jsonObject.getString("name"));
+                        model.setImage(jsonObject.getString("image"));
+
+                        String username=jsonObject.getString("username");
                         String logged_in=getUser();
                         if (username.equalsIgnoreCase(logged_in)){
                             arrayList.add(model);
@@ -228,11 +227,11 @@ public class progressParent extends AppCompatActivity {
 
         private class AdapterClass extends BaseAdapter {
 
-            ArrayList<BehaviorModel> models;
+            ArrayList<progressModel> models;
             Context context;
             ListView listView;
 
-            public AdapterClass(ArrayList<BehaviorModel> spacecraftArrayList, Context context, ListView listView) {
+            public AdapterClass(ArrayList<progressModel> spacecraftArrayList, Context context, ListView listView) {
                 this.models = spacecraftArrayList;
                 this.context = context;
                 this.listView = listView;
@@ -258,7 +257,7 @@ public class progressParent extends AppCompatActivity {
                 ViewHolder viewHolder = null;
 
                 if (viewHolder == null) {
-                    convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.prog, null);
+                    convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.progress, null);
                     viewHolder = new ViewHolder(convertView);
                     convertView.setTag(viewHolder);
 
@@ -266,40 +265,32 @@ public class progressParent extends AppCompatActivity {
                     viewHolder = (ViewHolder) convertView.getTag();
                 }
 
-                BehaviorModel model = models.get(position);
-                String kidnumber,level,kidname,parentname,behavior,behavie,date;
-                kidnumber = model.getKidnumber();
-                level = model.getLevel();
-                kidname = model.getKidname();
-                parentname = model.getParentname();
-                behavior = model.getBehavior();
-                behavie = model.getBehavie();
-                date = model.getDate();
-                viewHolder.kidnumber.setText(kidnumber);
-                viewHolder.level.setText(level);
-                viewHolder.kidname.setText(kidname);
-                viewHolder.parentname.setText(parentname);
-                viewHolder.behavior.setText(behavior);
-                viewHolder.behavie.setText(behavie);
-                viewHolder.date.setText(date);
+                progressModel model = models.get(position);
+                String id,name,image;
+                id=model.getId();
+                name=model.getName();
+                image=model.getImage();
+                viewHolder.id.setText(id);
+                viewHolder.name.setText(name);
+                /*get the real image*/
+                String image_url = "http://192.168.43.88/sem2/images/"+image;
+                Picasso.get().load(image_url).fit().centerCrop().into(viewHolder.image);
+
                 return convertView;
             }
 
 
             public class ViewHolder {
-
-                TextView kidnumber,level,kidname,parentname,behavior,behavie,date;
+                TextView id, name;
                 View view;
+                ImageView image;
 
                 public ViewHolder(View view) {
                     this.view = view;
-                    kidnumber = view.findViewById(R.id.kidnumber);
-                    level = view.findViewById(R.id.level);
-                    kidname = view.findViewById(R.id.kidname);
-                    parentname = view.findViewById(R.id.parentname);
-                    behavior = view.findViewById(R.id.behavior);
-                    behavie = view.findViewById(R.id.behavie);
-                    date = view.findViewById(R.id.date);
+                    id = view.findViewById(R.id.id);
+                    name = view.findViewById(R.id.name);
+                    image = view.findViewById(R.id.image);
+
                 }
             }
         }
@@ -311,3 +302,4 @@ public class progressParent extends AppCompatActivity {
         return value;
     }
 }
+

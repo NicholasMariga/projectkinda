@@ -22,7 +22,6 @@
             <TableRow>
 
                 <TextView
-                    android:textStyle="bold"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Level/Class" />
@@ -39,7 +38,7 @@
             <TableRow>
 
                 <TextView
-                    android:textStyle="bold"
+
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Notice" />
@@ -60,7 +59,7 @@
             <TableRow>
 
                 <TextView
-                    android:textStyle="bold"
+
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text=" Notice Date" />

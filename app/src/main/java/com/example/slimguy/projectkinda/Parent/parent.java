@@ -167,10 +167,9 @@ public class parent extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-       // if (id == R.id.action_about) {
-
-       //     return true;
-    //    }
+        if (id == R.id.action_about) {
+            return true;
+        }
 
         return super.onOptionsItemSelected(item);
     }
@@ -180,15 +179,13 @@ public class parent extends AppCompatActivity
         android.os.Process.killProcess(android.os.Process.myPid());
         System.exit(1);
     }
-public void abt(View v){
-    Intent intent = new Intent(parent.this, about.class);
-    startActivity(intent);
-}
+
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
+
        /* if (id == R.id.nav_camera) {
             // Handle the camera action
         } else if (id == R.id.nav_gallery) {
@@ -200,7 +197,9 @@ public void abt(View v){
         } else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_send) {
+
         }
+
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;*/

@@ -48,7 +48,7 @@ public class behaviourParent extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Behaviour");
         listView = findViewById(R.id.list);
-        constant="192.168.43.107";
+        constant="192.168.137.1";
         folder = "sem2";
         listView.setDivider(null);
         swipeRefreshLayout=findViewById(R.id.swipe);

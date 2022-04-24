@@ -51,7 +51,7 @@ public class newscenter extends AppCompatActivity {
         Toolbar toolbar =  findViewById(R.id.as);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("News");
-        constant="192.168.43.107";
+        constant="192.168.137.1";
         folder = "sem2";
         listView.setDivider(null);
         swipeRefreshLayout=findViewById(R.id.swipe);

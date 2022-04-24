@@ -210,7 +210,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Academic Progress"
+                        android:text="Progress"
                         android:textColor="#6f6f6f"
                         android:textSize="18dp"
                         android:layout_marginTop="12dp"/>

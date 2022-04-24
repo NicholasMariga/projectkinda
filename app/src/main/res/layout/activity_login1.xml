@@ -191,15 +191,14 @@
                   android:textAllCaps="true"
                   android:textColor="@color/white"/>
                   -->
-            <TextView
+            <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Forgot password"
                 android:onClick="forgotpassword"
                 android:id="@+id/forgotpass"
                 android:textSize="12sp"
-                android:background="@drawable/btn_bg"
-                android:layout_marginTop="100dp"
+                android:layout_marginTop="150dp"
                 android:gravity="center_horizontal"
                 android:layout_centerHorizontal="true"
                 android:layout_centerInParent="true"/>

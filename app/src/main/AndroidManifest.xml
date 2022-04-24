@@ -30,12 +30,11 @@
         <activity android:name=".Complaint.complaint" />
         <activity android:name=".Parent.progressParent" />
         <activity android:name=".Parent.behaviourParent" />
+
         <activity android:name=".Parent.notifications" />
         <activity android:name=".Parent.assignmentsParent" />
         <activity android:name=".Remarks.remarks" />
-        <activity android:name=".Parent.newscenter" />
-        <activity android:name=".Complaint.viewcomplaint" />
-        <activity android:name=".Parent.about"></activity>
+        <activity android:name=".Parent.newscenter"></activity>
     </application>
 
 </manifest>

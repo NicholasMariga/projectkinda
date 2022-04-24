@@ -43,12 +43,7 @@ public class login1 extends AppCompatActivity {
         passp = password.getText().toString().trim();
         ;
 
-        if (((userp.equalsIgnoreCase("2388"))  && (passp.equalsIgnoreCase("parent")))||
-                ((userp.equalsIgnoreCase("PG/763/2019"))  && (passp.equalsIgnoreCase("123456789")))||
-                ((userp.equalsIgnoreCase("DC/141/2019"))  && (passp.equalsIgnoreCase("804802")))||
-                ((userp.equalsIgnoreCase("PP1/547/2019"))  && (passp.equalsIgnoreCase("1234567890")))||
-                ((userp.equalsIgnoreCase("PP2/403/2019"))  && (passp.equalsIgnoreCase("987654321")))||
-                ((userp.equalsIgnoreCase("DC/750/2019"))&& (passp.equalsIgnoreCase("12345678")))) {
+        if ((userp.equalsIgnoreCase("2388")) && (passp.equalsIgnoreCase("parent"))) {
 
             SharedPreferences.Editor editor=sharedPreferences.edit();
             editor.putString("log",userp);
@@ -58,7 +53,6 @@ public class login1 extends AppCompatActivity {
             scrollo.putExtra("log", userp);
 
             startActivity(scrollo);
-            finish();
 
             // Toast.makeText(login1.this," Incorrect username or password",Toast.LENGTH_SHORT).show();
         } else if ((userp.equalsIgnoreCase("slimguy@gmail.com")) && (passp.equalsIgnoreCase("parent"))) {

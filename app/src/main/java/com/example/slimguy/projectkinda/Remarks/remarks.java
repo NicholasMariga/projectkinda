@@ -10,7 +10,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.slimguy.projectkinda.R;
@@ -31,12 +30,11 @@ public class remarks extends AppCompatActivity {
 
 
     Spinner level;
-    String To_level,About,Compl,Level,phone,Loggedas;
+    String To_level,About,Compl,Level,phone;
     EditText etRemarks,number,idp,to_kname;
     String constant,folder;
     SharedPreferences sharedPreferences;
     String File="File";
-    private TextView loggedas;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,12 +42,8 @@ public class remarks extends AppCompatActivity {
         setContentView(R.layout.activity_remarks);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        loggedas = findViewById(R.id.loggedas);
-        String log = getIntent().getStringExtra("log");
 
-        loggedas.setText(log);
-
-        constant="192.168.43.107";
+        constant="192.168.137.101";
         folder = "sem2";
         to_kname=findViewById(R.id.to_kname);
         level=findViewById(R.id.level);
@@ -69,7 +63,6 @@ public class remarks extends AppCompatActivity {
     }
 
     public void submit(View view) {
-        Loggedas=loggedas.getText().toString();
         To_level=to_kname.getText().toString();
         About=idp.getText().toString();
         phone=number.getText().toString();
@@ -79,7 +72,7 @@ public class remarks extends AppCompatActivity {
             Toast.makeText(this, "Check all fields", Toast.LENGTH_SHORT).show();
         }else{
             Back back=new Back(remarks.this);
-            back.execute(Loggedas,To_level,About,Level,phone,Compl);
+            back.execute(To_level,About,Level,phone,Compl);
         }
 
     }
@@ -110,12 +103,11 @@ public class remarks extends AppCompatActivity {
         @Override
         protected String doInBackground(String... params) {
 
-            String kidnumber = params[0];
-            String kname = params[1];
-            String id = params[2];
-            String level = params[3];
-            String number = params[4];
-            String remarks = params[5];
+            String kname = params[0];
+            String id = params[1];
+            String level = params[2];
+            String number = params[3];
+            String remarks = params[4];
             String logged_in=getUser();
 
 
@@ -131,8 +123,7 @@ public class remarks extends AppCompatActivity {
                     OutputStream outputStream = httpURLConnection.getOutputStream();
                     OutputStreamWriter outputStreamWriter = new OutputStreamWriter(outputStream, "UTF-8");
                     BufferedWriter bufferedWriter = new BufferedWriter(outputStreamWriter);
-                    String post_data =  URLEncoder.encode("kidnumber", "UTF-8") + "=" + URLEncoder.encode(kidnumber, "UTF-8") + "&"
-                            + URLEncoder.encode("kname", "UTF-8") + "=" + URLEncoder.encode(kname, "UTF-8") + "&"
+                    String post_data = URLEncoder.encode("kname", "UTF-8") + "=" + URLEncoder.encode(kname, "UTF-8") + "&"
                             + URLEncoder.encode("id", "UTF-8") + "=" + URLEncoder.encode(id, "UTF-8") + "&"
                             + URLEncoder.encode("level", "UTF-8") + "=" + URLEncoder.encode(level, "UTF-8") + "&"
                             + URLEncoder.encode("number", "UTF-8") + "=" + URLEncoder.encode(number, "UTF-8") + "&"

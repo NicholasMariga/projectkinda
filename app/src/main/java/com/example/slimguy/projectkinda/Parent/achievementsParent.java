@@ -36,7 +36,7 @@ import java.net.URL;
 import java.util.ArrayList;
 
 
-public class achievementsParent extends AppCompatActivity {
+public class    achievementsParent extends AppCompatActivity {
     ListView listView;
     String constant,folder;
     SwipeRefreshLayout swipeRefreshLayout;
@@ -51,7 +51,7 @@ public class achievementsParent extends AppCompatActivity {
         Toolbar toolbar =  findViewById(R.id.as);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Achievements");
-        constant="192.168.43.107";
+        constant="192.168.137.1";
         folder = "sem2";
         listView.setDivider(null);
         swipeRefreshLayout=findViewById(R.id.swipe);
@@ -243,6 +243,7 @@ public class achievementsParent extends AppCompatActivity {
                 this.context = context;
                 this.listView = listView;
             }
+
             @Override
             public int getCount() {
                 return models.size();
@@ -252,10 +253,12 @@ public class achievementsParent extends AppCompatActivity {
             public Object getItem(int position) {
                 return models.get(position);
             }
+
             @Override
             public long getItemId(int position) {
                 return position;
             }
+
             @Override
             public View getView(int position, View convertView, ViewGroup parent) {
                 ViewHolder viewHolder = null;

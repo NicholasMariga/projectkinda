@@ -22,10 +22,10 @@
             <TableRow>
 
                 <TextView
-                    android:textStyle="bold"
+
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="   News Date" />
+                    android:text=" News Date" />
 
                 <TextView
                     android:id="@+id/newdate"
@@ -38,10 +38,10 @@
             <TableRow>
 
                 <TextView
-                    android:textStyle="bold"
+
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="   News" />
+                    android:text="News" />
 
                 <TextView
                     android:id="@+id/news"

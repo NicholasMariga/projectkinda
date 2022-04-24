@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">kawema</string>
+    <string name="app_name">projectkinda</string>
     <string name="title_activity_parent">parent</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>

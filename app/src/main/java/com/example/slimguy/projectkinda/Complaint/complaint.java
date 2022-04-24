@@ -2,7 +2,6 @@ package com.example.slimguy.projectkinda.Complaint;
 
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
@@ -11,11 +10,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.slimguy.projectkinda.Parent.achievementsParent;
-import com.example.slimguy.projectkinda.Parent.parent;
 import com.example.slimguy.projectkinda.R;
 
 import java.io.BufferedReader;
@@ -32,12 +28,11 @@ import java.net.URLEncoder;
 
 public class complaint extends AppCompatActivity {
     Spinner to_level,about,level;
-    String To_level,About,Compl,Level,kidnumber,Loggedas;
+    String To_level,About,Compl,Level;
     EditText etComplaint;
     String constant,folder;
     SharedPreferences sharedPreferences;
     String File="File";
-    private TextView loggedas;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,12 +41,7 @@ public class complaint extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        loggedas = findViewById(R.id.loggedas);
-        String log = getIntent().getStringExtra("log");
-
-        loggedas.setText(log);
-
-        constant="192.168.43.107";
+        constant="192.168.137.101";
         folder = "sem2";
         to_level=findViewById(R.id.to_level);
         level=findViewById(R.id.level);
@@ -59,6 +49,7 @@ public class complaint extends AppCompatActivity {
         etComplaint=findViewById(R.id.etComplaint);
         sharedPreferences=getSharedPreferences(File, Context.MODE_PRIVATE);
     }
+
     public void refresh(View view) {
         to_level.setSelected(false);
         about.setSelected(false);
@@ -66,7 +57,6 @@ public class complaint extends AppCompatActivity {
         etComplaint.setText("");
     }
     public void submit(View view) {
-        Loggedas=loggedas.getText().toString();
         To_level=to_level.getSelectedItem().toString();
         About=about.getSelectedItem().toString();
         Compl=etComplaint.getText().toString();
@@ -75,7 +65,7 @@ public class complaint extends AppCompatActivity {
             Toast.makeText(this, "Check all fields", Toast.LENGTH_SHORT).show();
         }else{
             Back back=new Back(complaint.this);
-            back.execute(Loggedas,To_level,About,Level,Compl);
+            back.execute(To_level,About,Level,Compl);
         }
 
     }
@@ -106,15 +96,14 @@ public class complaint extends AppCompatActivity {
         @Override
         protected String doInBackground(String... params) {
 
-            String kidnumber = params[0];
-            String towho = params[1];
-            String about = params[2];
-            String leve = params[3];
-            String complain = params[4];
+            String towho = params[0];
+            String about = params[1];
+            String leve = params[2];
+            String complain = params[3];
             String logged_in=getUser();
 
 
-            String sign_url = "http://" + constant + "/" + folder + "/complaint2.php";
+            String sign_url = "http://" + constant + "/" + folder + "/complaint.php";
 
             if (sign_url != null) {
 
@@ -126,14 +115,11 @@ public class complaint extends AppCompatActivity {
                     OutputStream outputStream = httpURLConnection.getOutputStream();
                     OutputStreamWriter outputStreamWriter = new OutputStreamWriter(outputStream, "UTF-8");
                     BufferedWriter bufferedWriter = new BufferedWriter(outputStreamWriter);
-                    String post_data =
-                              URLEncoder.encode("kidnumber", "UTF-8") + "=" + URLEncoder.encode(kidnumber, "UTF-8") + "&"
-                            + URLEncoder.encode("towho", "UTF-8") + "=" + URLEncoder.encode(towho, "UTF-8") + "&"
+                    String post_data = URLEncoder.encode("towho", "UTF-8") + "=" + URLEncoder.encode(towho, "UTF-8") + "&"
                             + URLEncoder.encode("about", "UTF-8") + "=" + URLEncoder.encode(about, "UTF-8") + "&"
                             + URLEncoder.encode("leve", "UTF-8") + "=" + URLEncoder.encode(leve, "UTF-8") + "&"
                             + URLEncoder.encode("logged_in", "UTF-8") + "=" + URLEncoder.encode(logged_in, "UTF-8") + "&"
                             + URLEncoder.encode("complain", "UTF-8") + "=" + URLEncoder.encode(complain, "UTF-8");
-
 
                     bufferedWriter.write(post_data);
 
@@ -191,9 +177,5 @@ public class complaint extends AppCompatActivity {
 
         String value=sharedPreferences.getString("log","empty");
         return value;
-    }
-    public void viewcompl(View view){
-        Intent logg = new Intent(complaint.this, viewcomplaint.class);
-        startActivity(logg);
     }
 }

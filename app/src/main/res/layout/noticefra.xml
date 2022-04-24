@@ -1,31 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:background="@color/transparent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent" android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="80dp"
-        android:textStyle="italic"
-        android:textSize="20sp"
-        android:id="@+id/textabout"
-        android:text="            In this kindergarten advancement and welfare monitoring application carters monitoring of kids in all perspectives. In this case, kids are the most considered because they are unable to express themselves, also they are not around their parents which makes it hard for the parent or guardian to monitor the kid.
-        With this application in place we are able to push welfare of the kids to the next level, above all ensure a smooth and safer monitoring evaluation environment provided to the young kids."/>
-
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Thankyou"
-        android:textAlignment="center"
-        android:textSize="23sp"
-        android:textStyle="italic"
-        android:layout_marginTop="40dp"
-        android:layout_below="@+id/textabout"/>
 </RelativeLayout>

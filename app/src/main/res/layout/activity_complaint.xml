@@ -26,25 +26,13 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="2dp"
+            android:layout_marginTop="25dp"
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
             android:layout_marginBottom="40dp"
             android:orientation="vertical">
 
 
-
-            <TextView
-                android:id="@+id/loggedas"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="27dp"
-                android:layout_marginRight="15dp"
-                android:layout_marginTop="25dp"
-                android:textAlignment="center"
-                android:text=""
-                android:textColor="@color/white"
-                android:textSize="14sp" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -52,24 +40,22 @@
                 android:id="@+id/tvsp"
                 android:layout_marginBottom="5dp"
                 android:textSize="15sp"
-                android:layout_below="@+id/loggedas"
                 android:textColor="@color/white"
                 android:fontFamily="sans-serif-light"
                 android:textAllCaps="true"
                 android:layout_marginTop="25dp" />
-
             <Spinner
                 android:id="@+id/to_level"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/loggedas"
-                android:layout_marginLeft="48dp"
                 android:layout_marginRight="15dp"
-                android:layout_marginTop="25dp"
+                android:textColor="@color/white"
                 android:layout_toRightOf="@+id/tvsp"
+                android:layout_marginLeft="52dp"
                 android:contextClickable="true"
-                android:entries="@array/to_level"
-                android:textColor="@color/white">
+
+                android:layout_marginTop="25dp"
+                android:entries="@array/to_level">
 
             </Spinner>
             <TextView
@@ -140,9 +126,9 @@
             <EditText
                 android:id="@+id/etComplaint"
                 android:layout_width="match_parent"
-                android:layout_height="260dp"
+                android:layout_height="340dp"
                 android:layout_below="@+id/tvco"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="10dp"
                 android:layout_weight="1"
                 android:ems="10"
                 android:textColor="@color/white"
@@ -159,20 +145,12 @@
             android:onClick="submit"
             android:layout_below="@+id/etComplaint"/>
         <Button
-            android:id="@+id/btnviewcomplaint"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="VIEW COMPLAINT"
-
-            android:onClick="viewcompl"
-            android:layout_below="@+id/btnsubmit"/>
-        <Button
-            android:layout_marginTop="2dp"
+            android:layout_marginTop="4dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Refresh"
             android:onClick="refresh"
-            android:layout_below="@+id/btnviewcomplaint"
+            android:layout_below="@+id/btnsubmit"
             android:layout_alignParentBottom="true"/>
 
 

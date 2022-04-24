@@ -24,7 +24,6 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textStyle="bold"
                     android:text="Kid Number" />
 
                 <TextView
@@ -40,7 +39,6 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textStyle="bold"
                     android:text="Level/Class" />
 
                 <TextView
@@ -58,7 +56,6 @@
 
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textStyle="bold"
                     android:text="Kid Name" />
 
                 <TextView
@@ -75,7 +72,6 @@
 
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textStyle="bold"
                     android:text="Parent Name" />
 
                 <TextView
@@ -91,7 +87,6 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textStyle="bold"
                     android:text="Behavior" />
 
                 <TextView
@@ -105,7 +100,7 @@
             <TableRow>
 
                 <TextView
-                    android:textStyle="bold"
+
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Behavior" />
@@ -121,7 +116,7 @@
             <TableRow>
 
                 <TextView
-                    android:textStyle="bold"
+
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Date" />

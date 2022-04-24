@@ -23,8 +23,6 @@
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:textStyle="bold"
-
                     android:layout_height="wrap_content"
                     android:text="Kid Number" />
 
@@ -40,9 +38,8 @@
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:textStyle="bold"
                     android:layout_height="wrap_content"
-                    android:text="Class" />
+                    android:text="Level/Class" />
 
                 <TextView
                     android:id="@+id/level"
@@ -58,7 +55,6 @@
                 <TextView
 
                     android:layout_width="match_parent"
-                    android:textStyle="bold"
                     android:layout_height="wrap_content"
                     android:text="Kid Name" />
 
@@ -76,7 +72,6 @@
 
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textStyle="bold"
                     android:text="Parent Name" />
 
                 <TextView
@@ -91,7 +86,6 @@
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:textStyle="bold"
                     android:layout_height="wrap_content"
                     android:text="Achievements" />
 
@@ -108,9 +102,8 @@
                 <TextView
 
                     android:layout_width="match_parent"
-                    android:textStyle="bold"
                     android:layout_height="wrap_content"
-                    android:text="Achievement(%)" />
+                    android:text="achiement(%)" />
 
                 <TextView
                     android:id="@+id/achie"
@@ -125,7 +118,6 @@
                 <TextView
 
                     android:layout_width="match_parent"
-                    android:textStyle="bold"
                     android:layout_height="wrap_content"
                     android:text="Date" />
 
